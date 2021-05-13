@@ -12,17 +12,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"//This is only valiation / assetion  \r",
-							"\r",
 							"pm.test(\"Email should be valid\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Email  should be valid\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Email should be valid\");\r",
 							"});\r",
-							"\r",
-							"\r",
 							"\r",
 							"pm.test(\"Phone number should be 10 digits\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Phone number should be 10 digits\");\r",
-							"});"
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
