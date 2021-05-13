@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "f3f5acf6-118d-49e3-bd2e-0adfb50b7bab",
+		"name": "API Temp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Data Validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//This is only valiation / assetion  \r",
+							"\r",
+							"pm.test(\"Email should be valid\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Email  should be valid\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Phone number should be 10 digits\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Phone number should be 10 digits\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"//data from csv \r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkucWFhdXRvLmNvLm56XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjE4NTc3OTY0LCJleHAiOjE2MTg1ODE1NjQsIm5iZiI6MTYxODU3Nzk2NCwianRpIjoiaWN1Vk9jcmNZY1pNSXE2SCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.GRtN2i3gJ9OuPOPdgtIeZ2r-QyADFFtydBOrXshkuHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkucWFhdXRvLmNvLm56XC9hcGlcL3YxXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYyMDYwMTU0NSwiZXhwIjoxNjIwNjA1MTQ1LCJuYmYiOjE2MjA2MDE1NDUsImp0aSI6InYyZ1lqdFRreTR3ZWRQc2siLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yN0RT06xJpLlZlZzgK1vzVbVVD4Yx3CXxd0xPeaZmmA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{       \"firstName\": \"{{fn}}\",\r\n        \"lastName\": \"{{ln}}\",\r\n        \"email\": \"222\",\r\n        \"phone\": \"111\",\r\n        \"city\": \"string\",\r\n        \"zipCode\": \"123123\",\r\n        \"addressLine1\": \"test\",\r\n        \"addressLine2\": \"test\",\r\n        \"itemNumber\": 0,\r\n        \"comment\": \"string\",\r\n        \"state\": \"AL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/BillingOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BillingOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
